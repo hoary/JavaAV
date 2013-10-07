@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>JavaAV-FFmpeg</artifactId>
+        <groupId>com.github.hoary.ffmpeg</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>com.github.hoary.ffmpeg</groupId>
+    <artifactId>FFmpeg-macosx-x86_64</artifactId>
+    <version>2.0.1.1</version>
+
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>native</directory>
+                <targetPath>${project.build.outputDirectory}/com/googlecode/javacv/cpp/macosx-x86_64</targetPath>
+                <excludes>
+                    <exclude>*.txt</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>native</directory>
+                <targetPath>${project.build.outputDirectory}</targetPath>
+                <includes>
+                    <include>*.txt</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>

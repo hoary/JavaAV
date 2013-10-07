@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <groupId>com.github.hoary</groupId>
+    <artifactId>JavaAV-Project</artifactId>
+    <version>1.0</version>
+
+    <packaging>pom</packaging>
+
+    <name>JavaAV Project</name>
+    <url>https://github.com/hoary/JavaAV</url>
+    <description>Java interface to FFmpeg</description>
+
+    <licenses>
+        <license>
+            <name>GPLv2</name>
+            <url>http://www.gnu.org/licenses/gpl-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Alex Andres</name>
+            <email></email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:hoary/JavaAV.git</connection>
+        <developerConnection>scm:git:git@github.com:hoary/JavaAV.git</developerConnection>
+        <url>git@github.com:hoary/JavaAV.git</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>${repo-id}</id>
+            <url>${repo-url}</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <repo-id>none</repo-id>
+        <repo-url>none</repo-url>
+    </properties>
+
+    <modules>
+        <module>JavaAV</module>
+        <module>JavaAV-FFmpeg</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <properties>
+                <repo-id>sonatype-nexus-staging</repo-id>
+                <repo-url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</repo-url>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.4</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

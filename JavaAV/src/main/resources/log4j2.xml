@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <properties>
+        <property name="patternTime">%d{yyyy-MM-dd HH:mm:ss.SSS} | %-5.5p | %c{1}:%L - %msg%n</property>
+    </properties>
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${patternTime}"/>
+        </Console>
+    </appenders>
+    <loggers>
+        <root level="trace">
+            <appender-ref ref="console"/>
+        </root>
+    </loggers>
+</configuration>

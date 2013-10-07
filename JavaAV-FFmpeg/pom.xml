@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.hoary</groupId>
+        <artifactId>JavaAV-Project</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>com.github.hoary.ffmpeg</groupId>
+    <artifactId>JavaAV-FFmpeg</artifactId>
+    <version>1.0</version>
+
+    <packaging>pom</packaging>
+
+    <name>JavaAV-FFmpeg</name>
+    <url>https://github.com/hoary/JavaAV</url>
+    <description>JNI and FFmpeg binaries for JavaAV</description>
+
+    <modules>
+        <module>FFmpeg-android-arm</module>
+        <module>FFmpeg-linux-x86</module>
+        <module>FFmpeg-linux-x86_64</module>
+        <module>FFmpeg-macosx-x86_64</module>
+        <module>FFmpeg-windows-x86</module>
+        <module>FFmpeg-windows-x86_64</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+        </profile>
+    </profiles>
+
+</project>

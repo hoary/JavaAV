@@ -1,0 +1,8 @@
+/target
+/**/target
+*.idea
+*.iml
+*.so
+*.so.*
+*.dll
+*.dylib
