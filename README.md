@@ -68,7 +68,7 @@ For those who use Maven may include this project as dependency:
 <dependency>
 	<groupId>com.github.hoary</groupId>
 	<artifactId>JavaAV</artifactId>
-	<version>0.1</version>
+	<version>0.5</version>
 </dependency>
 ```
 
