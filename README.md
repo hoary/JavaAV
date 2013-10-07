@@ -79,11 +79,10 @@ You can also [download] JavaAV manually. In doing so, JavaAV and the necessary d
 
 [GPLv2 with Classpath Exception][GPLv2]
 
-
 [FFmpeg]: http://www.ffmpeg.org/
 [JavaCPP]: http://code.google.com/p/javacpp/
-[DemuxerExample]: https://github.com/hoary/JavaAV/blob/master/src/examples/java/com/github/hoary/javaav/DemuxerExample.java
-[MuxerExample]: https://github.com/hoary/JavaAV/blob/master/src/examples/java/com/github/hoary/javaav/MuxerExample.java
-[CameraExample]: https://github.com/hoary/JavaAV/blob/master/src/examples/java/com/github/hoary/javaav/CameraExample.java
+[DemuxerExample]: https://github.com/hoary/JavaAV/blob/master/JavaAV/src/examples/java/com/github/hoary/javaav/DemuxerExample.java
+[MuxerExample]: https://github.com/hoary/JavaAV/blob/master/JavaAV/src/examples/java/com/github/hoary/javaav/MuxerExample.java
+[CameraExample]: https://github.com/hoary/JavaAV/blob/master/JavaAV/src/examples/java/com/github/hoary/javaav/CameraExample.java
 [GPLv2]: https://raw.github.com/hoary/JavaAV/master/LICENSE
 [download]: https://github.com/hoary/JavaAV/blob/master
