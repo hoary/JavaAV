@@ -21,10 +21,13 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacpp.BytePointer;
-import com.googlecode.javacpp.PointerPointer;
+import org.bytedeco.javacpp.BytePointer;
+import org.bytedeco.javacpp.PointerPointer;
 
-import static com.googlecode.javacv.cpp.avutil.*;
+import static org.bytedeco.javacpp.avutil.av_free;
+import static org.bytedeco.javacpp.avutil.av_get_bytes_per_sample;
+import static org.bytedeco.javacpp.avutil.av_malloc;
+import static org.bytedeco.javacpp.avutil.av_sample_fmt_is_planar;
 
 /**
  * An {@code AudioFrame} contains audio samples with a specific {@code AudioFormat}

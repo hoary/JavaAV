@@ -21,11 +21,11 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacv.cpp.avcodec.AVPacket;
+import org.bytedeco.javacpp.avcodec.AVPacket;
 
 import java.nio.ByteBuffer;
 
-import static com.googlecode.javacv.cpp.avcodec.av_free_packet;
+import static org.bytedeco.javacpp.avcodec.av_free_packet;
 
 public class MediaPacket {
 

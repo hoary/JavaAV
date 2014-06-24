@@ -21,17 +21,31 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacv.cpp.avcodec;
-import com.googlecode.javacv.cpp.avcodec.*;
-import com.googlecode.javacv.cpp.avutil.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.bytedeco.javacpp.avcodec;
+import org.bytedeco.javacpp.avcodec.AVCodecContext;
+import org.bytedeco.javacpp.avcodec.AVPacket;
+import org.bytedeco.javacpp.avutil.AVDictionary;
+import org.bytedeco.javacpp.avutil.AVFrame;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
-import static com.googlecode.javacv.cpp.avcodec.*;
-import static com.googlecode.javacv.cpp.avutil.*;
+import static org.bytedeco.javacpp.avcodec.avcodec_alloc_context3;
+import static org.bytedeco.javacpp.avcodec.avcodec_alloc_frame;
+import static org.bytedeco.javacpp.avcodec.avcodec_close;
+import static org.bytedeco.javacpp.avcodec.avcodec_flush_buffers;
+import static org.bytedeco.javacpp.avcodec.avcodec_free_frame;
+import static org.bytedeco.javacpp.avutil.FF_QP2LAMBDA;
+import static org.bytedeco.javacpp.avutil.av_d2q;
+import static org.bytedeco.javacpp.avutil.av_dict_free;
+import static org.bytedeco.javacpp.avutil.av_dict_set;
+import static org.bytedeco.javacpp.avutil.av_free;
+import static org.bytedeco.javacpp.avutil.av_get_bytes_per_sample;
+import static org.bytedeco.javacpp.avutil.av_get_default_channel_layout;
+import static org.bytedeco.javacpp.avutil.av_inv_q;
+import static org.bytedeco.javacpp.avutil.av_q2d;
 
 /**
  * {@code Coder} is an abstract representation of an encoder or decoder. This class
@@ -43,7 +57,7 @@ import static com.googlecode.javacv.cpp.avutil.*;
 public abstract class Coder extends Configurable {
 
 	/** The logger. */
-	private final static Logger logger = LogManager.getLogger(Coder.class.getName());
+	private final static Logger logger = LoggerFactory.getLogger(Coder.class.getName());
 
 	/** Coder state indicates whether the {@code Coder} is opened or closed. */
 	public enum State {

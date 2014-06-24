@@ -24,9 +24,24 @@ package com.github.hoary.javaav;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.googlecode.javacv.cpp.avcodec.*;
-import static com.googlecode.javacv.cpp.avformat.*;
-import static com.googlecode.javacv.cpp.avutil.*;
+import static org.bytedeco.javacpp.avcodec.AVCodecContext;
+import static org.bytedeco.javacpp.avcodec.AVPacket;
+import static org.bytedeco.javacpp.avcodec.av_free_packet;
+import static org.bytedeco.javacpp.avformat.AVFormatContext;
+import static org.bytedeco.javacpp.avformat.AVInputFormat;
+import static org.bytedeco.javacpp.avformat.AVStream;
+import static org.bytedeco.javacpp.avformat.av_find_input_format;
+import static org.bytedeco.javacpp.avformat.av_read_frame;
+import static org.bytedeco.javacpp.avformat.avformat_close_input;
+import static org.bytedeco.javacpp.avformat.avformat_find_stream_info;
+import static org.bytedeco.javacpp.avformat.avformat_open_input;
+import static org.bytedeco.javacpp.avutil.AVDictionary;
+import static org.bytedeco.javacpp.avutil.AVMEDIA_TYPE_AUDIO;
+import static org.bytedeco.javacpp.avutil.AVMEDIA_TYPE_VIDEO;
+import static org.bytedeco.javacpp.avutil.AVRational;
+import static org.bytedeco.javacpp.avutil.av_d2q;
+import static org.bytedeco.javacpp.avutil.av_dict_free;
+import static org.bytedeco.javacpp.avutil.av_dict_set;
 
 /**
  * {@code Demuxer} is used to read single media streams from an input source. Media

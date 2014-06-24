@@ -21,17 +21,16 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacpp.Pointer;
-import com.googlecode.javacv.cpp.avutil.Arg0_Pointer_int_String_Pointer;
+import org.bytedeco.javacpp.Pointer;
+import org.bytedeco.javacpp.avutil.Callback_Pointer_int_String_Pointer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import static org.bytedeco.javacpp.avutil.av_log_format_line;
 
-import static com.googlecode.javacv.cpp.avutil.av_log_format_line;
+public class LogCallback extends Callback_Pointer_int_String_Pointer {
 
-public class LogCallback extends Arg0_Pointer_int_String_Pointer {
-
-	private final static Logger LOGGER = LogManager.getLogger(LogCallback.class.getName());
+	private final static Logger LOGGER = LoggerFactory.getLogger(LogCallback.class.getName());
 
 	private boolean printPrefix = true;
 
