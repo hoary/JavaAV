@@ -78,58 +78,16 @@
         </profile>
     </profiles>
 
-    <repositories>
-        <repository>
-            <id>JavaCV</id>
-            <url>http://maven2.javacv.googlecode.com/git/</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
-            <groupId>com.googlecode.javacv</groupId>
+            <groupId>org.bytedeco</groupId>
             <artifactId>javacv</artifactId>
-            <version>0.6</version>
+            <version>0.8</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.0-beta9</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.0-beta9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.hoary.ffmpeg</groupId>
-            <artifactId>FFmpeg-android-arm</artifactId>
-            <version>2.0.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.hoary.ffmpeg</groupId>
-            <artifactId>FFmpeg-linux-x86</artifactId>
-            <version>2.0.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.hoary.ffmpeg</groupId>
-            <artifactId>FFmpeg-linux-x86_64</artifactId>
-            <version>2.0.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.hoary.ffmpeg</groupId>
-            <artifactId>FFmpeg-macosx-x86_64</artifactId>
-            <version>2.0.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.hoary.ffmpeg</groupId>
-            <artifactId>FFmpeg-windows-x86</artifactId>
-            <version>2.0.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.hoary.ffmpeg</groupId>
-            <artifactId>FFmpeg-windows-x86_64</artifactId>
-            <version>2.0.1.1</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

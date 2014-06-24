@@ -21,16 +21,29 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacpp.IntPointer;
-import com.googlecode.javacpp.LongPointer;
-import com.googlecode.javacv.cpp.avcodec.*;
-import com.googlecode.javacv.cpp.avutil.AVDictionary;
+import org.bytedeco.javacpp.IntPointer;
+import org.bytedeco.javacpp.LongPointer;
+import org.bytedeco.javacpp.avcodec.AVCodec;
+import org.bytedeco.javacpp.avcodec.AVCodecContext;
+import org.bytedeco.javacpp.avutil.AVDictionary;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
-import static com.googlecode.javacv.cpp.avcodec.*;
-import static com.googlecode.javacv.cpp.avutil.AVRational;
-import static com.googlecode.javacv.cpp.avutil.av_q2d;
+import static org.bytedeco.javacpp.avcodec.av_codec_is_decoder;
+import static org.bytedeco.javacpp.avcodec.av_codec_is_encoder;
+import static org.bytedeco.javacpp.avcodec.av_codec_next;
+import static org.bytedeco.javacpp.avcodec.avcodec_alloc_context3;
+import static org.bytedeco.javacpp.avcodec.avcodec_find_decoder;
+import static org.bytedeco.javacpp.avcodec.avcodec_find_decoder_by_name;
+import static org.bytedeco.javacpp.avcodec.avcodec_find_encoder;
+import static org.bytedeco.javacpp.avcodec.avcodec_find_encoder_by_name;
+import static org.bytedeco.javacpp.avcodec.avcodec_open2;
+import static org.bytedeco.javacpp.avutil.AVRational;
+import static org.bytedeco.javacpp.avutil.av_q2d;
 
 /**
  * {@code Codecs} are usually used by encoders and decoders. To create a {@code Codec} use

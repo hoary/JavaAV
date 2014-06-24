@@ -21,15 +21,21 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacpp.Pointer;
+import org.bytedeco.javacpp.Pointer;
 
 import java.util.Iterator;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.googlecode.javacv.cpp.avformat.*;
-import static com.googlecode.javacv.cpp.avutil.*;
+import static org.bytedeco.javacpp.avformat.AVFormatContext;
+import static org.bytedeco.javacpp.avformat.AVInputFormat;
+import static org.bytedeco.javacpp.avformat.av_find_input_format;
+import static org.bytedeco.javacpp.avformat.avformat_close_input;
+import static org.bytedeco.javacpp.avformat.avformat_open_input;
+import static org.bytedeco.javacpp.avutil.AVDictionary;
+import static org.bytedeco.javacpp.avutil.av_dict_set;
+import static org.bytedeco.javacpp.avutil.av_log_format_line;
 
 /**
  * Convenience class to get video input device capabilities.

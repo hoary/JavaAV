@@ -21,16 +21,25 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacpp.PointerPointer;
-import com.googlecode.javacv.cpp.swresample.*;
+import org.bytedeco.javacpp.PointerPointer;
+import org.bytedeco.javacpp.swresample.SwrContext;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.googlecode.javacv.cpp.avutil.*;
-import static com.googlecode.javacv.cpp.swresample.*;
+import static org.bytedeco.javacpp.avutil.AV_ROUND_DOWN;
+import static org.bytedeco.javacpp.avutil.AV_SAMPLE_FMT_NONE;
+import static org.bytedeco.javacpp.avutil.av_get_bytes_per_sample;
+import static org.bytedeco.javacpp.avutil.av_get_channel_layout_nb_channels;
+import static org.bytedeco.javacpp.avutil.av_opt_set_int;
+import static org.bytedeco.javacpp.avutil.av_rescale_rnd;
+import static org.bytedeco.javacpp.avutil.av_sample_fmt_is_planar;
+import static org.bytedeco.javacpp.swresample.swr_alloc;
+import static org.bytedeco.javacpp.swresample.swr_convert;
+import static org.bytedeco.javacpp.swresample.swr_free;
+import static org.bytedeco.javacpp.swresample.swr_init;
 
 /**
  * The AudioResampler converts audio samples from one audio format to another.

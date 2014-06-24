@@ -21,7 +21,7 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacv.cpp.avutil;
+import org.bytedeco.javacpp.avutil;
 
 /**
  * Enumeration of all media types. {@code MediaType} describes the type of media content

@@ -21,13 +21,32 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacv.cpp.avcodec.AVCodecContext;
-import com.googlecode.javacv.cpp.avcodec.AVPacket;
-import com.googlecode.javacv.cpp.avformat.*;
+import org.bytedeco.javacpp.avcodec.AVCodecContext;
+import org.bytedeco.javacpp.avcodec.AVPacket;
+import org.bytedeco.javacpp.avformat.AVFormatContext;
+import org.bytedeco.javacpp.avformat.AVIOContext;
+import org.bytedeco.javacpp.avformat.AVOutputFormat;
+import org.bytedeco.javacpp.avformat.AVStream;
 
-import static com.googlecode.javacv.cpp.avcodec.AV_PKT_FLAG_KEY;
-import static com.googlecode.javacv.cpp.avformat.*;
-import static com.googlecode.javacv.cpp.avutil.*;
+import static org.bytedeco.javacpp.avcodec.AV_PKT_FLAG_KEY;
+import static org.bytedeco.javacpp.avformat.AVFMT_GLOBALHEADER;
+import static org.bytedeco.javacpp.avformat.AVFMT_NOFILE;
+import static org.bytedeco.javacpp.avformat.AVIO_FLAG_WRITE;
+import static org.bytedeco.javacpp.avformat.av_dump_format;
+import static org.bytedeco.javacpp.avformat.av_guess_format;
+import static org.bytedeco.javacpp.avformat.av_interleaved_write_frame;
+import static org.bytedeco.javacpp.avformat.av_write_frame;
+import static org.bytedeco.javacpp.avformat.av_write_trailer;
+import static org.bytedeco.javacpp.avformat.avformat_alloc_context;
+import static org.bytedeco.javacpp.avformat.avformat_new_stream;
+import static org.bytedeco.javacpp.avformat.avformat_write_header;
+import static org.bytedeco.javacpp.avformat.avio_close;
+import static org.bytedeco.javacpp.avformat.avio_open;
+import static org.bytedeco.javacpp.avutil.AVDictionary;
+import static org.bytedeco.javacpp.avutil.AVRational;
+import static org.bytedeco.javacpp.avutil.AV_NOPTS_VALUE;
+import static org.bytedeco.javacpp.avutil.av_free;
+import static org.bytedeco.javacpp.avutil.av_rescale_q;
 
 public class Muxer extends Configurable {
 
@@ -367,5 +386,5 @@ public class Muxer extends Configurable {
 		videoStream = null;
 		audioStream = null;
 	}
-	
+
 }

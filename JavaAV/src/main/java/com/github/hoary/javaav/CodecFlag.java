@@ -21,7 +21,7 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacv.cpp.avcodec;
+import org.bytedeco.javacpp.avcodec;
 
 /**
  * Enumeration of all possible codec flags.

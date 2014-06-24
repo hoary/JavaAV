@@ -21,10 +21,11 @@
 
 package com.github.hoary.javaav;
 
-import static com.googlecode.javacv.cpp.avcodec.avcodec_register_all;
-import static com.googlecode.javacv.cpp.avdevice.avdevice_register_all;
-import static com.googlecode.javacv.cpp.avutil.av_log_set_callback;
-import static com.googlecode.javacv.cpp.avformat.*;
+import static org.bytedeco.javacpp.avcodec.avcodec_register_all;
+import static org.bytedeco.javacpp.avdevice.avdevice_register_all;
+import static org.bytedeco.javacpp.avformat.av_register_all;
+import static org.bytedeco.javacpp.avformat.avformat_network_init;
+import static org.bytedeco.javacpp.avutil.av_log_set_callback;
 
 public final class JavaAV {
 

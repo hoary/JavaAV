@@ -21,7 +21,7 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacpp.BytePointer;
+import org.bytedeco.javacpp.BytePointer;
 
 import java.nio.ByteBuffer;
 

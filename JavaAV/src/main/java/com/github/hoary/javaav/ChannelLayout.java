@@ -21,7 +21,7 @@
 
 package com.github.hoary.javaav;
 
-import com.googlecode.javacv.cpp.avutil;
+import org.bytedeco.javacpp.avutil;
 
 /**
  * Enumeration of all supported channel layouts. A {@code ChannelLayout} can be
